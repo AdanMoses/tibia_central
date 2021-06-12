@@ -2,13 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hello World</title>
+  <title>Tibia Central</title>
   <link rel='stylesheet' href='/stylesheets/main.css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+  <header class="banner">
+    <div class="title">
+      <h1> Tibia Central</h1>
+    </div>
+    <div>
+      <a href="">Sign up/Login</a>
+    </div>
+    <nav class="nav-bar">
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Notifications</a></li>
+        <li><a href="">Messages</a></li>
+        <li><a href="">Bookmarks</a></li>
+        <li><a href="">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="main-box">
+    <main>
+      <%= yield %>
+    </main>
+  </div>
+  <aside class="side-bar">
+    <div class="sponsor"></div>
+    <div class="spondor"></div>
+    <div class="important-stuff">
+      <ul>
+        <li><a href="">Terms and Conditions</a></li>
+        <li><a href="">Privacy Policy</a></li>
+        <li><a href="">Cookie Policy</a></li>
+        <li><a href="">Contact Us</a></li>
+      </ul>
+    </div>
+  </aside>
 
-  <%= yield %>
 
 </body>
 </html>
