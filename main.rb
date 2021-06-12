@@ -10,6 +10,7 @@ require_relative 'db/db'
 require_relative 'models/user'
 require_relative 'helpers/session.rb'
 require_relative 'controllers/users_controller'
+require_relative 'controllers/session_controller'
 
 
 get '/' do

@@ -17,6 +17,20 @@ def character_information(userID)
 
 end
 
+def find_user_by_email email
+  
+  sql_query = ("SELECT * FROM users WHERE email = $1;")
+  params = [email]
+  results = run_sql(sql_query, params)
+
+  if results.to_a.length > 0
+    return results[0]
+  else
+    return nil
+  end
+
+end
+
 def find_user_by_id id
 
   sql_query = ("SELECT * FROM users WHERE userid = $1;")
