@@ -10,8 +10,23 @@ def create_user(character_name, email, password)
 end
 
 def character_information(userID)
+
   user_id = userID
   sql_query = ("SELECT character_name FROM users WHERE userid = #{user_id}")
   run_sql(sql_query)
+
+end
+
+def find_user_by_id id
+
+  sql_query = ("SELECT * FROM users WHERE userid = $1;")
+  params = [id]
+  results = run_sql(sql_query, params)
+
+  if results.to_a.length > 0
+    return results[0]
+  else
+    return nil
+  end
 
 end
