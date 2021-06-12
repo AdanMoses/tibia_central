@@ -2,6 +2,7 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require 'pg'
+require 'httparty'
 
 enable :sessions
 
