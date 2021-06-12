@@ -16,8 +16,11 @@ post "/users/new" do
   redirect '/'
 end
 
-get "/user" do
-  results = character_information(3)
+get "/user" do 
+
+  p session[:user_id]
+
+  results = character_information(session[:user_id])
 
   response = HTTParty.get('https://api.tibiadata.com/v2/characters/xinfusion.json')
 
