@@ -12,7 +12,16 @@
       <h1> Tibia Central</h1>
     </div>
     <div>
-      <a href="">Sign up/Login</a>
+      <% if is_logged_in? %>
+        <form class="logout-form" action="/sessions" method="POST">
+          <div class="user-logout">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="Logout" class="logout-button">
+          </div>
+        </form>
+      <% else %>
+        <a href="">Sign up/Login</a>
+      <% end %>
     </div>
     <nav class="nav-bar">
       <ul>
