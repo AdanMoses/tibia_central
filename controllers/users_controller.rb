@@ -18,11 +18,20 @@ end
 
 get "/user" do 
 
-  p session[:user_id]
+  userid = session[:user_id]
 
-  results = character_information(session[:user_id])
+  results = character_information(userid)
+  character_name = results[0]["character_name"]
 
-  response = HTTParty.get('https://api.tibiadata.com/v2/characters/xinfusion.json')
+  if character_name.include? " "
+    name_split = character_name.split
+    rejoin = name_split.join "%20"
+    character_name = rejoin
+  end
+  
+  result_url = "https://api.tibiadata.com/v2/characters/#{character_name}.json"
+
+  response = HTTParty.get(result_url)
 
   erb :'/users/show', layout: :layout, locals: {results: results, response: response}
 end

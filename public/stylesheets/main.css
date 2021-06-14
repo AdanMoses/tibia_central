@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Sans:wght@300&display=swap");
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+#title {
+  font-family: "Bebas Neue", cursive;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+}

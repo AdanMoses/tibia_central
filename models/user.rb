@@ -12,7 +12,7 @@ end
 def character_information(userID)
 
   user_id = userID
-  sql_query = ("SELECT character_name FROM users WHERE userid = #{user_id}")
+  sql_query = ("SELECT character_name FROM users WHERE userid=#{user_id};")
   run_sql(sql_query)
 
 end

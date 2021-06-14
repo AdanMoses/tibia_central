@@ -1,15 +1,17 @@
 get '/login' do
-  erb :'/sessions/login', layout: :layout
+  erb :'/sessions/login', layout: :layout, locals: {error_message: ''}
 end
 
 post '/sessions' do
-  email = params[:email]
-  password = params[:user_password]
+  email = params['email']
+  password = params['password']
 
-  user = find_user_by_email(email)
+  users = run_sql("SELECT * FROM users WHERE email='#{email}'")
+  user = user_found(users)
 
-  if user && BCrypt::Password.new(user['password_digest']) == password
+  if user && BCrypt::Password.new(user['password_digest']) == params['password']
     session[:user_id] = user['userid']
+
     redirect '/user'
   else
     erb :'/sessions/login', layout: :layout, locals: {error_message: 'Incorrect Password'}
@@ -19,5 +21,6 @@ end
 
 delete '/sessions' do
   session[:user_id] = nil
+
   redirect '/'
 end
