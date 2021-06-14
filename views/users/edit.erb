@@ -1,0 +1,16 @@
+<form action="/user/<%= results["userid"] %>" method="POST">
+  
+  <input type="hidden" name="_method" value="PUT">
+
+  <label for="character_name">
+    Character Name:
+  </label>
+  <input type="character_name" value="<%= results["character_name"] %>">
+
+  <label for="email">
+    Email:
+  </label>
+  <input type="email" value="<%= results["email"] %>">
+
+  <input type="submit" value="Update Info">
+</form>
