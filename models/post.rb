@@ -1,5 +1,5 @@
-def create_message message
-  run_sql("INSERT INTO posts(message) VALUES($1);", [message])
+def create_message(userid, message)
+  run_sql("INSERT INTO posts(userid, message) VALUES($1, $2);", [userid, message])
 end
 
 def get_posts()

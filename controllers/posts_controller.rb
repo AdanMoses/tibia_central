@@ -10,7 +10,8 @@ end
 
 post '/posts' do
   message = params[:message]
-  create_message(message)
+  userid = session[:user_id]
+  create_message(userid, message)
 
   redirect '/posts'
 end
