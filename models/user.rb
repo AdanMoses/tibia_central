@@ -76,3 +76,51 @@ def find_character_name(userid)
   return character_name
 
 end
+
+def find_character_vocation(userid)
+  
+  response =
+  results =
+  find_character_information(userid)
+
+  character_vocation = response["characters"]["data"]["vocation"]
+
+  return character_vocation
+
+end
+
+def find_character_level(userid)
+  
+  response =
+  results =
+  find_character_information(userid)
+
+  character_level = response["characters"]["data"]["level"]
+
+  return character_level
+
+end
+
+def find_character_world(userid)
+  
+  response =
+  results =
+  find_character_information(userid)
+
+  character_world = response["characters"]["data"]["world"]
+
+  return character_world
+
+end
+
+def find_character_residence(userid)
+  
+  response =
+  results =
+  find_character_information(userid)
+
+  character_residence = response["characters"]["data"]["residence"]
+
+  return character_residence
+
+end

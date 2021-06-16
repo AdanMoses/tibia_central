@@ -45,5 +45,5 @@ put "/user/:userid" do |userid|
   params = [character_name, email, userid]
   run_sql(sql_query, params)
 
-  redirect "/user"
+  redirect "/posts"
 end

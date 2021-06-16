@@ -15,7 +15,16 @@
     </div>
     <div>
       <% if is_logged_in? %>
-        <h4><%= session[:userid] %></h4>
+        <% find_character_information(session[:user_id]) %>
+        <div class="user-char">
+          <ul>
+            <li>Character Name: <%= find_character_name(session[:user_id]) %></li>
+            <li>Vocation: <%= find_character_vocation(session[:user_id]) %></li>
+            <li>Level: <%= find_character_level(session[:user_id]) %></li>
+            <li>World: <%= find_character_world(session[:user_id]) %></li>
+            <li>Residence: <%= find_character_residence(session[:user_id]) %></li>
+          </ul>
+        </div>
         <form class="logout-form" action="/sessions" method="POST">
           <div class="user-logout">
             <input type="hidden" name="_method" value="DELETE">
