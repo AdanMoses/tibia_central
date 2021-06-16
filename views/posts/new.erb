@@ -1,0 +1,8 @@
+<h2>Make a post</h2>
+
+<% if is_logged_in? %>
+  <form action="/posts" method="POST">
+    <textarea name="message" id="post-message" cols="30" rows="10"></textarea>
+    <button>Create</button>
+  </form>
+<% end %>

@@ -1,16 +1,25 @@
-<form action="/user/<%= results["userid"] %>" method="POST">
+<form class="user-edit-form" action="/user/<%= results["userid"] %>" method="POST">
   
-  <input type="hidden" name="_method" value="PUT">
-
-  <label for="character_name">
+  <div class="hidden-input">
+    <input type="hidden" name="_method" value="PUT">
+  </div>
+  
+  <div class="character-name-edit">
+    <label for="character_name">
     Character Name:
-  </label>
-  <input type="character_name" value="<%= results["character_name"] %>">
-
-  <label for="email">
+    </label>
+    <input name="character_name" value="<%= results["character_name"] %>">
+  </div>
+  
+  <div class="email-edit">
+    <label for="email">
     Email:
-  </label>
-  <input type="email" value="<%= results["email"] %>">
-
-  <input type="submit" value="Update Info">
+    </label>
+    <input name="email" value="<%= results["email"] %>">
+  </div>
+  
+  <div class="submit-edit">
+    <input type="submit" value="Update Info">
+  </div>
+  
 </form>

@@ -1,4 +1,3 @@
-require 'pry'
 
 get '/sign_up' do
   redirect "/users/new"
@@ -51,11 +50,9 @@ put "/user/:userid" do |userid|
   character_name = params[:character_name]
   email = params[:email]
 
-  binding.pry
-
   sql_query = ("UPDATE users SET character_name = $1, email = $2 WHERE userid = $3;")
   params = [character_name, email, userid]
   run_sql(sql_query, params)
 
-  redirect "/"
+  redirect "/user"
 end

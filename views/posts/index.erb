@@ -1,0 +1,11 @@
+<h2>Posts</h2>
+
+<% if is_logged_in? %>
+  <% posts.each do |post| %>
+    
+    <section class="post">
+      <p> <%= post['message'] %> </p>
+    </section>
+
+  <% end %>
+<% end %>

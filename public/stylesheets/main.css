@@ -70,12 +70,12 @@ a:hover {
 
 .sider-bar {
   display: flex;
-  padding-top: 20px;
 }
 
 .sponsor img {
   width: 100%;
   border-radius: 20px;
+  padding-top: 30px;
 }
 
 .important-stuff {
