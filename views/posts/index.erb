@@ -2,8 +2,8 @@
 
 <% if is_logged_in? %>
   <% posts.each do |post| %>
-    
     <section class="post">
+      <h6> <%= character_name = find_character_name(post['userid']) %> </h3>
       <p> <%= post['message'] %> </p>
     </section>
 

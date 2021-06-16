@@ -14,25 +14,16 @@ post "/users/new" do
 
   create_user(character_name, email, password)
   
-  redirect '/'
+  redirect '/login'
 end
 
 get "/user" do 
 
   userid = session[:user_id]
+  response =
+  results =
 
-  results = character_information(userid)
-  character_name = results[0]["character_name"]
-
-  if character_name.include? " "
-    name_split = character_name.split
-    rejoin = name_split.join "%20"
-    character_name = rejoin
-  end
-
-  result_url = "https://api.tibiadata.com/v2/characters/#{character_name}.json"
-
-  response = HTTParty.get(result_url)
+  find_character_information(userid)
 
   erb :'/users/show', layout: :layout, locals: {results: results, response: response, userid: userid}
 end

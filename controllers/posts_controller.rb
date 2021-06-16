@@ -1,7 +1,8 @@
 get '/posts' do
+
   posts = get_posts()
 
-  erb :'posts/index', locals: {posts: posts}
+  erb :'posts/index', locals: {posts: posts, response: response}
 end
 
 get '/posts/new' do

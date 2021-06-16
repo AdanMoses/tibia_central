@@ -18,5 +18,10 @@ require_relative 'controllers/posts_controller'
 require_relative 'helpers/session.rb'
 
 get '/' do
+
+  if is_logged_in?
+    redirect '/posts'
+  end
+
   erb :index, layout: :layout
 end
