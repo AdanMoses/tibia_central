@@ -1,7 +1,16 @@
 <h2>Posts</h2>
 
 <% if is_logged_in? %>
+  
+  <form id="user-post-box" action="/posts" method="POST">
+  
+    <textarea name="message" id="post-message" cols="30" rows="10"></textarea>
+    <button>Create</button>
+  
+  </form>
+  
   <% posts.each do |post| %>
+  
     <section class="post">
       <h6> <%= character_name = find_character_name(post['userid']) %> </h3>
       <p> <%= post['message'] %> </p>

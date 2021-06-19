@@ -13,7 +13,7 @@
 
 body {
   font-family: "IBM Plex Sans", sans-serif;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   background-color: #484349ff;
   font-size: 20px;
@@ -44,10 +44,15 @@ a:hover {
   color: #18a999ff;
 }
 
+#title h1 {
+  margin-top: 0;
+}
+
 .main-grid {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  grid-gap: 1%;
+  grid-gap: 3%;
+  margin-top: 5%;
 }
 
 .banner {
@@ -70,17 +75,34 @@ a:hover {
 }
 
 .sider-bar {
-  display: flex;
+  display: grid;
+  flex-direction: column;
+  grid-template-rows: repeat(6, 1fr);
 }
 
-.sponsor img {
+.aside-grid-box {
+  width: 100%;
+  height: auto;
+}
+
+#sponsor-one img {
   width: 100%;
   border-radius: 20px;
-  padding-top: 30px;
+  border-top: 10%;
+}
+
+#sponsor-two img {
+  width: 100%;
+  border-radius: 20px;
 }
 
 .important-stuff {
-  order: -1;
+  grid-row-start: 6;
+  padding-top: 80%;
+}
+
+.important-stuff {
+  justify-self: left;
 }
 
 .user-char ul {
@@ -90,4 +112,21 @@ a:hover {
 .post {
   border: 1px solid rgb(86, 81, 87);
   border-radius: 20px;
+}
+
+.main-box {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#sign-up-link {
+  padding-top: 20px%;
+}
+
+#user-post-box textarea {
+  background-color: #484349ff;
+  color: #f7f0f0ff;
+  border-radius: 20px;
+  width: 80%;
+  padding: 20px;
 }
