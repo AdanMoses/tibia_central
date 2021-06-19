@@ -3,5 +3,5 @@ def create_message(userid, message)
 end
 
 def get_posts()
-  run_sql("SELECT * FROM posts")
+  run_sql("SELECT * FROM posts ORDER BY postid DESC;")
 end
