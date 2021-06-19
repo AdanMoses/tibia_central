@@ -5,3 +5,11 @@ end
 def get_posts()
   run_sql("SELECT * FROM posts ORDER BY postid DESC;")
 end
+
+def delete_post(postid)
+  run_sql("DELETE FROM posts WHERE postid=#{postid};")
+end
+
+def select_post(postid)
+  run_sql = ("SELECT * FROM planets WHERE postid = #{postid}")
+end

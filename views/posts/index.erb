@@ -13,7 +13,7 @@
   
     <section class="post">
       <h6> <%= character_name = find_character_name(post['userid']) %> </h3>
-      <p> <%= post['message'] %> </p>
+      <a href="/posts/:postid"><p> <%= post['message'] %> </p></a>
     </section>
 
   <% end %>

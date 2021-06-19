@@ -16,3 +16,19 @@ post '/posts' do
 
   redirect '/posts'
 end
+
+delete '/posts/:postid' do |postid|
+  delete_post(postid)
+
+  redirect '/posts'
+end
+
+get '/posts/:postid' do |postid|
+  
+  post = select_post(postid)
+  
+  binding.irb
+
+  erb :'posts/show', layout: :layout
+
+end
