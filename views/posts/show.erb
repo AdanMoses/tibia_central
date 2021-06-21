@@ -1,0 +1,19 @@
+<div class="individual-post">
+  <article class="post-info">
+
+    <h4> <%= find_character_name(post_info["userid"]) %> </h4>
+    <p><%= post_info["message"] %></p>
+
+  </article>
+  <div class="edit-list">
+    <div class="edit-individual">
+      <a href="/posts/<%=post_info["postid"]%>/edit">Edit</a>
+      <br>
+      <a href="/posts">Back to posts feed</a>
+    </div>
+    <form action="/posts/<%= post_info["postid"] %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <input id="delete-button" type="submit" value="DELETE">
+    </form>
+  </div>
+</div>

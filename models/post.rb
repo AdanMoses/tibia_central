@@ -11,5 +11,5 @@ def delete_post(postid)
 end
 
 def select_post(postid)
-  run_sql = ("SELECT * FROM planets WHERE postid = #{postid}")
+  run_sql("SELECT * FROM posts WHERE postid = #{postid}")
 end

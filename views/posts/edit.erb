@@ -1,0 +1,7 @@
+<% if is_logged_in? %>
+  <form action="/posts/<%= post_info["postid"] %>" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+    <textarea name="message" id="post-message" cols="30" rows="10"></textarea>
+    <button>Update</button>
+  </form>
+<% end %>
