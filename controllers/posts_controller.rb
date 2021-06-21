@@ -33,7 +33,7 @@ get '/posts/:id' do |id|
 
 end
 
-put '/post/:id' do |id|
+put '/posts/:id' do |id|
 
   message = params[:message]
 
@@ -46,9 +46,10 @@ put '/post/:id' do |id|
 end
 
 get '/posts/:id/edit' do |id|
-  
+
   post = select_post(id)
   post_info = post[0]
 
-  erb :'/planet/edit', layout: :main_layout, locals: {post_info: post_info}
+  erb :'/posts/edit', layout: :layout, locals: {post_info: post_info}
+
 end
