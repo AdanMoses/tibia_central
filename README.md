@@ -19,3 +19,15 @@ I have deployed my app to:
 ```
 https://shrouded-depths-90363.herokuapp.com
 ```
+
+---
+
+## TODO
+There's quite a bit of work to be done to this project, there's a lot that has to be rewriten, due to work and personal commitments I've fallen behind but will continue to work on it over the next several weeks.
+
+- Anyone can delete a file, this should be fixed to only user who posted
+- There's still a bit of work to do with sessions and who can see what
+- Need to add posts interaction
+- Need to work on the design, I am hopeless
+- Need to rethink UI and UX, will get functionality done and then try to refactor as I learn more about more techonologies and best practices
+ 
